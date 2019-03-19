@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Input.css'
 
 interface IProps {
     type?: string;

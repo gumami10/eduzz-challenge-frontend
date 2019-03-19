@@ -1,20 +1,21 @@
 import React from 'react'
 import Input from '../../atoms/Input/Input'
+import './Card.css'
 
 const Card = () => {
     return (
-        <div className="card animate Red">
+        <div className="card-input">
             <Input
                 placeholder="Titulo" 
-                className="card-title"
+                className="item"
             />
 
             <Input 
                 placeholder="Descrição" 
-                className="card-description"
+                className="item"
             />
 
-            <button type="button">Salvar</button>
+            <button className="button -container"type="button">Salvar</button>
         </div>
     )
 }
