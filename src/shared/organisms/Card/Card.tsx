@@ -1,22 +1,24 @@
 import React from 'react'
 import Input from '../../atoms/Input/Input'
 import './Card.css'
+import Select from '../../atoms/Select/Select';
 
 const Card = () => {
     return (
-        <div className="card-input">
+        <form className="card-input">
             <Input
                 placeholder="Titulo" 
                 className="item"
             />
-
-            <Input 
+            <Select />
+            {/* <Input 
+                type="checkbox"
                 placeholder="Descrição" 
                 className="item"
-            />
+            /> */}
 
             <button className="button -container"type="button">Salvar</button>
-        </div>
+        </form>
     )
 }
 
