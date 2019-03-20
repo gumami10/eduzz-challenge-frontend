@@ -3,9 +3,9 @@ import React, {useState, useEffect} from 'react'
 export default function Select () {
     const [value, setValue] = useState('')
 
-    useEffect(() => {
-        console.log(value);
-    })
+    // useEffect(() => {
+    //     console.log(value);
+    // })
     
     return (
         <select name="" value={value} onChange={e => setValue(e.target.value)}>
