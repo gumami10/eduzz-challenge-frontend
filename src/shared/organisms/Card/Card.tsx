@@ -1,23 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Input from '../../atoms/Input/Input'
 import './Card.css'
 import Select from '../../atoms/Select/Select';
 
 const Card = () => {
+
+    // const [buttonPressed, setButton] = useState(false)
+    const [style, setStyle] = useState({})
+    
+    function changeBackground () {
+        setStyle({
+            "display": "none"
+        })
+    }
+    
     return (
-        <form className="card-input">
+        <form className="card-input" style={style}>
             <Input
-                placeholder="Titulo" 
+                placeholder="E-mail" 
                 className="item"
             />
-            <Select />
-            {/* <Input 
-                type="checkbox"
-                placeholder="Descrição" 
+            {/* <Select /> */}
+            <Input 
+                type="password"
+                placeholder="Senha" 
                 className="item"
-            /> */}
+            />
 
-            <button className="button -container"type="button">Salvar</button>
+            <button 
+                className="button -container"
+                type="button"
+                onClick={changeBackground}
+            >
+                Salvar
+            </button>
         </form>
     )
 }
