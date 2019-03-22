@@ -12,8 +12,8 @@ class App extends Component {
         <header className="App-header">
           <Surprise />
           <Card />
+          <MoviesList />
         </header>
-        <MoviesList />
       </div>
     );
   }
