@@ -4,6 +4,7 @@ import './App.css';
 import Card from './shared/organisms/Card/Card'
 import Surprise from './shared/atoms/Surprise/Surprise';
 import MoviesList from './shared/organisms/MoviesList/MoviesList';
+import FilmsContent from './shared/pages/FilmsContent/FilmsContent';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
         <header className="App-header">
           <Surprise />
           <Card />
-          <MoviesList />
+          <FilmsContent /> 
         </header>
       </div>
     );

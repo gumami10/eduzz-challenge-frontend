@@ -2,38 +2,51 @@ import React, { useState, useEffect } from 'react'
 import Input from '../../atoms/Input/Input'
 import './Card.css'
 import Select from '../../atoms/Select/Select';
+import FilmsContent from '../../pages/FilmsContent/FilmsContent';
+
+
 
 const Card = () => {
 
     // const [buttonPressed, setButton] = useState(false)
-    const [style, setStyle] = useState({})
+    const [Component, setComponent] = useState(false)
+    // const [Style, setStyle] = useState({})
+
     
-    function changeBackground () {
-        setStyle({
-            "display": "none"
-        })
+    const Form = () => {
+        return (
+            <button 
+                className="button -container"
+                type="button"
+                onClick={changeComponent}
+            >
+                Show me some action!
+            </button>
+        )
+    }
+    function changeComponent () {
+
+        setComponent(true)
     }
     
     return (
-        <form className="card-input" style={style}>
-            <Input
+        <form className="card-container">
+            
+            {/* <Input
                 placeholder="E-mail" 
                 className="item"
             />
-            {/* <Select /> */}
             <Input 
                 type="password"
                 placeholder="Senha" 
                 className="item"
-            />
-
-            <button 
-                className="button -container"
-                type="button"
-                onClick={changeBackground}
-            >
-                Salvar
-            </button>
+            /> */}
+            {
+                Component === true
+                ? "<FilmsContent />"
+                : <Form />
+            }
+            
         </form>
     )
 }

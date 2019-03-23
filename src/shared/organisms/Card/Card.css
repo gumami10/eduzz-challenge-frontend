@@ -1,5 +1,5 @@
 
-.card-input {
+.card-container {
     align-items: center;
     background-color: white;
     border: 1px solid #efefef;
@@ -8,7 +8,6 @@
     margin: auto;
     padding: 30px;
     width: 50%;
-    max-width: 400px;
     box-shadow:
     /* The top layer shadow */
     0 1px 1px rgba(0,0,0,0.15),
@@ -22,8 +21,9 @@
         0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
-.card-input > .-container {
+.card-container > .-container {
     align-self: center; 
     margin-top: 10px;
+    font-size: 34px;
     opacity: 1;
 }
