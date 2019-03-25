@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Input from '../../atoms/Input/Input'
 import './Card.css'
 import Select from '../../atoms/Select/Select';
-import FilmsContent from '../../pages/FilmsContent/FilmsContent';
-
-
 
 const Card = () => {
 
@@ -12,10 +9,10 @@ const Card = () => {
     const [Component, setComponent] = useState(false)
     // const [Style, setStyle] = useState({})
 
-    
+
     const Form = () => {
         return (
-            <button 
+            <button
                 className="button -container"
                 type="button"
                 onClick={changeComponent}
@@ -25,28 +22,23 @@ const Card = () => {
         )
     }
     function changeComponent () {
-
         setComponent(true)
     }
-    
+
     return (
         <form className="card-container">
-            
-            {/* <Input
-                placeholder="E-mail" 
+
+            <Input
+                placeholder="Type the best Star Wars movie!"
                 className="item"
             />
-            <Input 
-                type="password"
-                placeholder="Senha" 
-                className="item"
-            /> */}
+
             {
                 Component === true
                 ? "<FilmsContent />"
                 : <Form />
             }
-            
+
         </form>
     )
 }

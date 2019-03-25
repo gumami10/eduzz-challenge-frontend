@@ -1,25 +1,29 @@
-import React from 'react'
-import './MovieItem.css'
-import CardFrontFacing from '../../atoms/CardFrontFacing/CardFrontFacing';
-import CardBackFacing from '../../atoms/CardBackFacing/CardBackFacing';
+import React, { useState } from "react";
+import "./MovieItem.css";
+import CardFacing from "../../atoms/CardFacing/CardFacing";
 
 interface IProps {
-    title: string,
-    description: string,
-    releaseDate: string
+    title: string;
+    description: string;
+    releaseDate: string;
 }
 
+export default function MovieItem(props: IProps) {
+    const [style, setStyle] = useState({});
+    const [showDetails, setShowDetails] = useState(false);
 
-
-export default function MovieItem (props: IProps) {
+    const changeCard = () => {
+        setShowDetails(!showDetails);
+    };
 
     return (
-        <div className="movie-card">
-
-            <CardFrontFacing title={props.title} releaseDate={props.releaseDate}/>
-            <CardBackFacing description={props.description}/>
-
-	    </div>        
-    )
-
+        <div className="movieItem" onClick={changeCard} style={style}>
+            <CardFacing
+                showDetails={showDetails}
+                title={props.title}
+                releaseDate={props.releaseDate}
+                description={props.description}
+            />
+        </div>
+    );
 }
