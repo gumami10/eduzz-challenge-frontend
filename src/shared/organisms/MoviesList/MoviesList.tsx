@@ -1,30 +1,78 @@
-import React from 'react'
-import rawData from './data.mock.json'
-import MovieItem from '../../molecules/MovieItem/MovieItem'
-import './MoviesList.css'
+import './MoviesList.css';
 
-export default function MoviesList () {
+import React, { Component, useEffect } from 'react';
+import * as ReactRedux from 'react-redux';
 
-    const data = rawData.results.map((obj) => {
-        return {
-            title: obj.title,
-            description: obj.opening_crawl,
-            releaseDate: obj.release_date
-        }
-    })
+import { getMovies } from '../../../redux/reducers/moviesReducer';
+import MovieItem from '../../molecules/MovieItem/MovieItem';
 
-    console.log(data)
-    return (
-        <ul className="MoviesList">
-           {data.map((sample) => {
-               return (
-                   <MovieItem 
-                        title={sample.title} 
-                        releaseDate={sample.releaseDate}
-                        description={sample.description}
-                    />
-               )
-           })}
-        </ul>
-    )
+interface IProps {
+    moviesReducer: {
+        movies: {
+            results: {
+                title: string;
+                opening_crawl: string;
+                release_date: string;
+            }[];
+        };
+        isLoading: boolean;
+        errors: boolean;
+    };
+    getMovies: () => void;
 }
+
+interface IState {
+    movies: {
+        results: {
+            title: string;
+            opening_crawl: string;
+            release_date: string;
+        };
+    };
+}
+
+class MoviesList extends Component<IProps | any, IState> {
+    state: IState = {
+        movies: {
+            results: {
+                title: "",
+                opening_crawl: "",
+                release_date: ""
+            }
+        }
+    };
+
+    componentWillMount() {
+        this.props.getMovies();
+    }
+
+    render() {
+        const movies = this.props.moviesReducer.movies.results || [];
+        console.log(movies);
+        return (
+            <ul className="MoviesList">
+                {movies.map((sample: any) => {
+                    return (
+                        <MovieItem
+                            key={sample.episode_id}
+                            title={sample.title}
+                            releaseDate={sample.release_date}
+                            description={sample.opening_crawl}
+                        />
+                    );
+                })}
+            </ul>
+        );
+    }
+}
+
+const mapStateToProps = (state: any) => ({
+    moviesReducer: state.movies
+});
+
+const mapDispatchToProps = {
+    getMovies
+};
+
+const connectToRedux = ReactRedux.connect(mapStateToProps, mapDispatchToProps);
+export default connectToRedux(MoviesList);
