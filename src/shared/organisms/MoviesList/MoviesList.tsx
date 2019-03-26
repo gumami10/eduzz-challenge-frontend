@@ -42,10 +42,9 @@ class MoviesList extends Component<IProps | any, IState> {
         }
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getMovies();
     }
-
     render() {
         const movies = this.props.moviesReducer.movies.results || [];
         console.log(movies);
