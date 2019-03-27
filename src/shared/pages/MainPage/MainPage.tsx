@@ -1,30 +1,32 @@
+import { useState } from 'react';
 import React from 'react';
-import * as ReactRedux from 'react-redux';
 
-import { getMovies } from '../../../redux/reducers/moviesReducer';
-import Surprise from '../../atoms/Surprise/Surprise';
 import Card from '../../organisms/Card/Card';
-import MoviesContent from '../MoviesContent/MoviesContent';
+import MoviesList from '../../organisms/MoviesList/MoviesList';
 
 const MainPage = () => {
+    const [Value, setValue] = useState("");
+    const [Flag, setFlag] = useState(false);
+
+    const changeComponent = (childValue: string) => {
+        setValue(childValue);
+    };
+
+    const getAction = () => {
+        setFlag(true);
+        const SearchMoviesList = (
+            <MoviesList isSearch={true} valueSearch={Value} />
+        );
+    };
+
     return (
         <div className="App">
             <section className="App-section">
-                <Surprise />
-                <Card />
-                <MoviesContent />
+                <Card getData={changeComponent} getAction={getAction} />
+                {Flag ? <MoviesList /> : ""}
             </section>
         </div>
     );
 };
 
-const mapStateToProps = (state: any) => ({
-    moviesReducer: state.movies
-});
-
-const mapDispatchToProps = {
-    getMovies
-};
-
-const connectToRedux = ReactRedux.connect(mapStateToProps, mapDispatchToProps);
-export default connectToRedux(MainPage);
+export default MainPage;

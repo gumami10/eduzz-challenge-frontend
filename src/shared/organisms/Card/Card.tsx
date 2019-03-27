@@ -1,46 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import Input from '../../atoms/Input/Input'
-import './Card.css'
-import Select from '../../atoms/Select/Select';
+import './Card.css';
 
-const Card = () => {
+import React, { useEffect, useState } from 'react';
 
-    // const [buttonPressed, setButton] = useState(false)
-    const [Component, setComponent] = useState(false)
-    // const [Style, setStyle] = useState({})
+import Form from '../../molecules/Form/Form';
 
-
-    const Form = () => {
-        return (
-            <button
-                className="button -container"
-                type="button"
-                onClick={changeComponent}
-            >
-                Show me some action!
-            </button>
-        )
-    }
-    function changeComponent () {
-        setComponent(true)
-    }
-
-    return (
-        <form className="card-container">
-
-            <Input
-                placeholder="Type the best Star Wars movie!"
-                className="item"
-            />
-
-            {
-                Component === true
-                ? "<FilmsContent />"
-                : <Form />
-            }
-
-        </form>
-    )
+interface IProps {
+    getData: any;
+    getAction: any;
 }
 
-export default Card
+const Card = (props: IProps) => {
+    return (
+        <Form getData={props.getData} getAction={props.getAction}>
+            {/*Component === true ? "<FilmsContent />" : ""*/}
+        </Form>
+    );
+};
+
+export default Card;

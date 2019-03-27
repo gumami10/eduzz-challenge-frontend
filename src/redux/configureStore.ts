@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import moviesReducer from './reducers/moviesReducer';
 
 const rootReducer = Redux.combineReducers({
-    movies: moviesReducer
+    movies: moviesReducer,
 })
 
 export default function configureStore() {

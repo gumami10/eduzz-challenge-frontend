@@ -44,23 +44,42 @@ export default function reducer(state = initialState, action: IAction) {
     }
 }
 
-export const getMovies = () => {
-    return (dispatch: any) => {
-        dispatch({
-            type: HTTP_GET_MOVIES_FETCHING,
-            payload: null
-        })
-
-        fetch("https://swapi.co/api/films/", {
-            method: "GET"
-        })
-        .then(response => response.json())
-        .then(json => dispatch({ type: HTTP_GET_MOVIES_SUCCESS, payload: json }))
-        .catch(error => {
-            return dispatch({
-            type: HTTP_GET_MOVIES_FAIL,
-            payload: error
-        })
-      })
-    }
+export const getMovies = (searchValue?: string) => {
+    if(searchValue !== undefined)
+        return (dispatch: any) => {
+            dispatch({
+                type: HTTP_GET_MOVIES_FETCHING,
+                payload: null
+            })
+            fetch("https://swapi.co/api/films/?search"+searchValue, {
+                method: "GET"
+            })
+            .then(response => response.json())
+            .then(json => dispatch({ type: HTTP_GET_MOVIES_SUCCESS, payload: json }))
+            .catch(error => {
+                return dispatch({
+                type: HTTP_GET_MOVIES_FAIL,
+                payload: error
+                })
+            })
+        }
+    else
+        return (dispatch: any) => {
+            dispatch({
+                type: HTTP_GET_MOVIES_FETCHING,
+                payload: null
+            })
+            fetch("https://swapi.co/api/films/", {
+                method: "GET"
+            })
+            .then(response => response.json())
+            .then(json => dispatch({ type: HTTP_GET_MOVIES_SUCCESS, payload: json }))
+            .catch(error => {
+                return dispatch({
+                type: HTTP_GET_MOVIES_FAIL,
+                payload: error
+                })
+            })
+        }
 }
+

@@ -18,7 +18,9 @@ interface IProps {
         isLoading: boolean;
         errors: boolean;
     };
-    getMovies: () => void;
+    getMovies: (valueSearch?: string) => void;
+    isSearch?: boolean;
+    valueSearch?: string;
 }
 
 interface IState {
@@ -43,13 +45,17 @@ class MoviesList extends Component<IProps | any, IState> {
     };
 
     componentDidMount() {
-        this.props.getMovies();
+        if (this.props.isSearch) {
+            this.props.getMovies(this.props.valueSearch);
+            console.log("ok");
+        } else this.props.getMovies();
     }
     render() {
         const movies = this.props.moviesReducer.movies.results || [];
         console.log(movies);
         return (
             <ul className="MoviesList">
+                <h1>All Star Wars movies</h1>
                 {movies.map((sample: any) => {
                     return (
                         <MovieItem

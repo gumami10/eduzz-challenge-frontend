@@ -1,4 +1,8 @@
 
-/* .FilmsContent {
-    position: absolute;
-} */
+.FilmsContent {
+    width: 100%;
+}
+
+._surprise {
+    background: url('../../img/Darth.png')
+}
