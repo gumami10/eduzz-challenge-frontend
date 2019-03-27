@@ -48,14 +48,23 @@ class MoviesList extends Component<IProps | any, IState> {
         if (this.props.isSearch) {
             this.props.getMovies(this.props.valueSearch);
             console.log("ok");
-        } else this.props.getMovies();
+        } else this.props.getMovies("");
     }
+
     render() {
-        const movies = this.props.moviesReducer.movies.results || [];
-        console.log(movies);
+        const movies = this.props.moviesReducer.movies.movies.results || [];
         return (
             <ul className="MoviesList">
-                <h1>All Star Wars movies</h1>
+                {this.props.isSearch ? (
+                    <h1 style={{ color: "white" }}>
+                        Results for {this.props.valueSearch}{" "}
+                    </h1>
+                ) : (
+                    <h1 style={{ textAlign: "center" }}>
+                        All Star Wars movies
+                    </h1>
+                )}
+
                 {movies.map((sample: any) => {
                     return (
                         <MovieItem
@@ -72,7 +81,7 @@ class MoviesList extends Component<IProps | any, IState> {
 }
 
 const mapStateToProps = (state: any) => ({
-    moviesReducer: state.movies
+    moviesReducer: state
 });
 
 const mapDispatchToProps = {

@@ -45,13 +45,13 @@ export default function reducer(state = initialState, action: IAction) {
 }
 
 export const getMovies = (searchValue?: string) => {
-    if(searchValue !== undefined)
+    if(searchValue !== "")
         return (dispatch: any) => {
             dispatch({
                 type: HTTP_GET_MOVIES_FETCHING,
                 payload: null
             })
-            fetch("https://swapi.co/api/films/?search"+searchValue, {
+            fetch("https://swapi.co/api/films/?search="+ searchValue, {
                 method: "GET"
             })
             .then(response => response.json())

@@ -23,7 +23,7 @@ const MainPage = () => {
         <div className="App">
             <section className="App-section">
                 <Card getData={changeComponent} getAction={getAction} />
-                {Flag ? <MoviesList /> : ""}
+                {Flag ? <MoviesList isSearch={true} valueSearch={Value} /> : ""}
             </section>
         </div>
     );
