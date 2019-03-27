@@ -1,10 +1,12 @@
 import './Form.css';
 
 import React, { Component } from 'react';
+import * as ReactRedux from 'react-redux';
+
+import { getMovies } from '../../../redux/reducers/moviesReducer';
 
 interface IProps {
-    getData: (e: any) => void;
-    getAction: () => void;
+    getMovies: (value: string) => void;
 }
 
 interface IState {
@@ -17,14 +19,9 @@ class Form extends Component<IProps, IState> {
     };
 
     onChange = (e: any) => {
-        this.props.getData(e.target.value);
         this.setState({
             value: e.target.value
         });
-    };
-
-    onAction = () => {
-        this.props.getAction();
     };
 
     render() {
@@ -41,7 +38,7 @@ class Form extends Component<IProps, IState> {
                 <button
                     className="button -container"
                     type="button"
-                    onClick={this.props.getAction}
+                    onClick={() => this.props.getMovies(this.state.value)}
                 >
                     Show me some action!
                 </button>
@@ -50,4 +47,11 @@ class Form extends Component<IProps, IState> {
     }
 }
 
-export default Form;
+const mapStateToProps = null;
+
+const mapDispatchToProps = {
+    getMovies
+};
+
+const connectToRedux = ReactRedux.connect(mapStateToProps, mapDispatchToProps);
+export default connectToRedux(Form);
