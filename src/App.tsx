@@ -22,7 +22,6 @@ class App extends Component<IProps, IState> {
     };
 
     getSurprise = () => {
-        console.log("Something crazy should happen");
         if (this.state.surprise) this.setState({ surprise: false });
         else this.setState({ surprise: true });
     };
@@ -43,11 +42,16 @@ class App extends Component<IProps, IState> {
                         description={
                             !this.state.surprise
                                 ? "Turn to the dark side"
-                                : "I REGRET IT"
+                                : "I REGRET IT, TAKE ME BACK"
                         }
+                        isSurprise={this.state.surprise}
                     />
                 </div>
-                {!this.state.surprise ? <MainPage /> : <MoviesContent />}
+                {!this.state.surprise ? (
+                    <MainPage />
+                ) : (
+                    <MoviesContent isSearch={false} />
+                )}
             </ReactRedux.Provider>
         );
     }

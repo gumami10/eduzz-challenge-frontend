@@ -11,30 +11,23 @@ interface IProps {
         isLoading: boolean;
         errors: boolean;
     };
+    surprise?: boolean;
 }
 
-interface IState {
-    isSearch: boolean;
-}
-
-class MoviesList extends Component<IProps | any, IState> {
-    state: IState = {
-        isSearch: false
-    };
-
+class MoviesList extends Component<IProps | any> {
     render() {
         console.log(this.props);
         const movies = this.props.moviesReducer.movies.movies || [];
         return (
             <ul className="MoviesList">
-                {this.state.isSearch ? (
-                    <h1 style={{ color: "white" }}>
-                        Results for {this.props.valueSearch}
+                {this.props.surprise === true ? (
+                    <h1 style={{ textAlign: "center" }}>Enjoy the darkside</h1>
+                ) : movies.length === 0 ? (
+                    <h1 style={{ textAlign: "center" }}>
+                        Type something we can search for!
                     </h1>
                 ) : (
-                    <h1 style={{ textAlign: "center" }}>
-                        All Star Wars movies
-                    </h1>
+                    <h1 style={{ textAlign: "center" }}>Star Wars Movies</h1>
                 )}
 
                 {movies.map((sample: any) => {

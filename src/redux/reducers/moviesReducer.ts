@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action: IAction) {
     switch (action.type) {
         case HTTP_GET_MOVIES_FETCHING:
             return {
-                movies: state.movies.results,
+                movies: initialState.movies,
                 errors: state.errors,
                 isLoading: true
             }

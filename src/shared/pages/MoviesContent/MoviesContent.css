@@ -1,8 +1,5 @@
 
-.FilmsContent {
-    width: 100%;
-}
 
 ._surprise {
-    background: url('../../img/Darth.png')
+    background-image: url('../../img/Darth.png')
 }

@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import * as ReactRedux from 'react-redux';
 
+import { getMovies } from '../../../redux/reducers/moviesReducer';
 import MoviesList from '../../organisms/MoviesList/MoviesList';
 
-const MoviesContent = () => {
+const MoviesContent = (props: any) => {
     const Styles = {
         width: "80%"
     };
+    useEffect(() => {
+        props.getMovies("");
+    }, []);
     return (
         <section className={`card-container MoviesContent`} style={Styles}>
-            <MoviesList isSearch={false} />
+            <MoviesList surprise={true} style={Styles} />
         </section>
     );
 };
 
-export default MoviesContent;
+const mapStateToProps = null;
+
+const mapDispatchToProps = {
+    getMovies
+};
+
+const connectToRedux = ReactRedux.connect(mapStateToProps, mapDispatchToProps);
+export default connectToRedux(MoviesContent);
