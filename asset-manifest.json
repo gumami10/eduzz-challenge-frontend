@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.5320c664.chunk.css",
-  "main.js": "/static/js/main.72bac96e.chunk.js",
-  "main.js.map": "/static/js/main.72bac96e.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.9a517ee9.chunk.js": "/static/js/2.9a517ee9.chunk.js",
-  "static/js/2.9a517ee9.chunk.js.map": "/static/js/2.9a517ee9.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.7479c24e2859a41065dd4fc77e5585ef.js": "/precache-manifest.7479c24e2859a41065dd4fc77e5585ef.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.5320c664.chunk.css.map": "/static/css/main.5320c664.chunk.css.map",
-  "static/media/App.css": "/static/media/star-wars-wallpaper.971535f4.jpg"
+  "main.css": "/eduzz-challenge-frontend/static/css/main.84f92fbb.chunk.css",
+  "main.js": "/eduzz-challenge-frontend/static/js/main.5da8b049.chunk.js",
+  "main.js.map": "/eduzz-challenge-frontend/static/js/main.5da8b049.chunk.js.map",
+  "runtime~main.js": "/eduzz-challenge-frontend/static/js/runtime~main.4a4e5711.js",
+  "runtime~main.js.map": "/eduzz-challenge-frontend/static/js/runtime~main.4a4e5711.js.map",
+  "static/js/2.9a517ee9.chunk.js": "/eduzz-challenge-frontend/static/js/2.9a517ee9.chunk.js",
+  "static/js/2.9a517ee9.chunk.js.map": "/eduzz-challenge-frontend/static/js/2.9a517ee9.chunk.js.map",
+  "index.html": "/eduzz-challenge-frontend/index.html",
+  "precache-manifest.9aa3ba9cb58498e302c53dbbb1c0f027.js": "/eduzz-challenge-frontend/precache-manifest.9aa3ba9cb58498e302c53dbbb1c0f027.js",
+  "service-worker.js": "/eduzz-challenge-frontend/service-worker.js",
+  "static/css/main.84f92fbb.chunk.css.map": "/eduzz-challenge-frontend/static/css/main.84f92fbb.chunk.css.map",
+  "static/media/App.css": "/eduzz-challenge-frontend/static/media/star-wars-wallpaper.971535f4.jpg"
 }
