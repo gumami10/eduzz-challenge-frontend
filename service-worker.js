@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/eduzz-challenge-frontend/precache-manifest.9aa3ba9cb58498e302c53dbbb1c0f027.js"
+  "/eduzz-challenge-frontend/precache-manifest.911935921127c160266376e85f438998.js"
 );
 
 workbox.clientsClaim();
