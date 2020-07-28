@@ -1,14 +1,23 @@
 {
-  "main.css": "/eduzz-challenge-frontend/static/css/main.7929c0b4.chunk.css",
-  "main.js": "/eduzz-challenge-frontend/static/js/main.b0a63820.chunk.js",
-  "main.js.map": "/eduzz-challenge-frontend/static/js/main.b0a63820.chunk.js.map",
-  "runtime~main.js": "/eduzz-challenge-frontend/static/js/runtime~main.4a4e5711.js",
-  "runtime~main.js.map": "/eduzz-challenge-frontend/static/js/runtime~main.4a4e5711.js.map",
-  "static/js/2.1471b106.chunk.js": "/eduzz-challenge-frontend/static/js/2.1471b106.chunk.js",
-  "static/js/2.1471b106.chunk.js.map": "/eduzz-challenge-frontend/static/js/2.1471b106.chunk.js.map",
-  "index.html": "/eduzz-challenge-frontend/index.html",
-  "precache-manifest.911935921127c160266376e85f438998.js": "/eduzz-challenge-frontend/precache-manifest.911935921127c160266376e85f438998.js",
-  "service-worker.js": "/eduzz-challenge-frontend/service-worker.js",
-  "static/css/main.7929c0b4.chunk.css.map": "/eduzz-challenge-frontend/static/css/main.7929c0b4.chunk.css.map",
-  "static/media/App.css": "/eduzz-challenge-frontend/static/media/star-wars-wallpaper.971535f4.jpg"
+  "files": {
+    "main.css": "/extremely-secret-project/static/css/main.43d0d931.chunk.css",
+    "main.js": "/extremely-secret-project/static/js/main.2a147327.chunk.js",
+    "main.js.map": "/extremely-secret-project/static/js/main.2a147327.chunk.js.map",
+    "runtime-main.js": "/extremely-secret-project/static/js/runtime-main.1e2d7367.js",
+    "runtime-main.js.map": "/extremely-secret-project/static/js/runtime-main.1e2d7367.js.map",
+    "static/js/2.53dec89b.chunk.js": "/extremely-secret-project/static/js/2.53dec89b.chunk.js",
+    "static/js/2.53dec89b.chunk.js.map": "/extremely-secret-project/static/js/2.53dec89b.chunk.js.map",
+    "index.html": "/extremely-secret-project/index.html",
+    "precache-manifest.01c5d25ad2eb3d0188075fb4c726facf.js": "/extremely-secret-project/precache-manifest.01c5d25ad2eb3d0188075fb4c726facf.js",
+    "service-worker.js": "/extremely-secret-project/service-worker.js",
+    "static/css/main.43d0d931.chunk.css.map": "/extremely-secret-project/static/css/main.43d0d931.chunk.css.map",
+    "static/js/2.53dec89b.chunk.js.LICENSE.txt": "/extremely-secret-project/static/js/2.53dec89b.chunk.js.LICENSE.txt",
+    "static/media/canvas.png": "/extremely-secret-project/static/media/canvas.9c96749c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e2d7367.js",
+    "static/js/2.53dec89b.chunk.js",
+    "static/css/main.43d0d931.chunk.css",
+    "static/js/main.2a147327.chunk.js"
+  ]
 }
