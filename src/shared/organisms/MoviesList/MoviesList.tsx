@@ -21,13 +21,26 @@ class MoviesList extends Component<IProps | any> {
         return (
             <ul className="MoviesList">
                 {this.props.surprise === true ? (
-                    <h1 style={{ textAlign: "center" }}>Enjoy the darkside</h1>
+                    <h1
+                        className="card-container"
+                        style={{ textAlign: "center" }}
+                    >
+                        Enjoy the darkside
+                    </h1>
                 ) : movies.length === 0 ? (
-                    <h1 style={{ textAlign: "center" }}>
+                    <h1
+                        className="card-container"
+                        style={{ textAlign: "center" }}
+                    >
                         Type something we can search for!
                     </h1>
                 ) : (
-                    <h1 style={{ textAlign: "center" }}>Star Wars Movies</h1>
+                    <h1
+                        className="card-container"
+                        style={{ textAlign: "center" }}
+                    >
+                        Star Wars Movies
+                    </h1>
                 )}
 
                 {movies.map((sample: any) => {

@@ -34,6 +34,8 @@ export default function reducer(state = initialState, action: IAction) {
                 isLoading: false
             }
         case HTTP_GET_MOVIES_FAIL:
+            alert("It looks like something went wrong, this site might not work correctly");
+            console.log(action.payload)
             return {
                 movies: initialState.movies,
                 errors: true,
